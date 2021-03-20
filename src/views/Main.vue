@@ -1,12 +1,13 @@
 <template>
     <div class="main">
-        <h2>Enter Relevant Skills</h2>
         <div class="row skillsRow">
-            <div class="col-sm-6 skillsCol">
-                <SkillsList />
-            </div>
-            <div class="col-sm-6 userSkills">
+            <div class="col-sm userSkills">
                 <UserSkills />
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm skillsCol">
+                <SkillsList />
             </div>
         </div>
         <div class="row results">
@@ -50,11 +51,17 @@ export default {
 <style>
 .skillsRow{
     margin: 5rem;
+    max-height: 40rem;
 }
 .results{
     margin: 2rem;
+    height: 50%;
 }
 .userSkills{
     max-height: 40rem;
+    width: 20%;
+}
+.main{
+    background: linear-gradient(180deg,rgba(42,172,234,1) 0%,rgba(29,146,227,1) 100%);
 }
 </style>

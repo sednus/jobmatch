@@ -47,8 +47,8 @@ export default {
 }
 </script>
 <style scoped>
-
 .results{
     width: 100%;
+    text-align: center;
 }
 </style>

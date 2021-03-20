@@ -1,6 +1,6 @@
 <template>
-    <div class="card">
-        <div class="card-header"> Your Skills </div>
+    <div >
+        <!-- <div class="card-header" v-if="skills.length > 0"> Your Skills </div> -->
         <ul class="list-group list-group-flush">
           <li v-for="skill in skills" :key="skill.name" class="list-group-item">
               <span class="card-text skill">{{ skill.name}}</span> &nbsp;
@@ -47,7 +47,6 @@ li{
     border-bottom: none;
     text-align: justify;
     max-height: 5rem;
-    height: 5rem;
 }
 ul{
     overflow-y: auto;
@@ -59,6 +58,6 @@ button{
 }
 .skill{
     display: inline-block;
-    width: 20rem;
+    /* width: 20rem; */
 }
 </style>
