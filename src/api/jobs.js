@@ -18,12 +18,24 @@ export default {
     },
 
     async getSkills(){
-        const skills = new Set();
+        const skills = [];
         if(!jobs.length){
             await this.getJobs()
         }
         jobs.forEach(element => {
-            element.skills.forEach(s => skills.add(s))
+            element.skills.forEach(s => {
+                let included = false;
+                // iterate added elements to not add repeats
+                skills.forEach(added => {
+                    // make sure to make comparizon case insensitive
+                    if(added.toUpperCase() === s.toUpperCase()){
+                        included = true
+                    }
+                })
+                if(!included){
+                  skills.push(s)
+                }
+            })
         });
     
         return skills;

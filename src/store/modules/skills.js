@@ -7,8 +7,8 @@ const getters = {};
 const actions = {
     async fetchSkills({commit}){
         const skills = await jobs.getSkills()
-        console.log(skills);
-        commit('setSkills', skills);
+        const sorted =  Array.from(skills).sort()
+        commit('setSkills', sorted);
     }
 }
 

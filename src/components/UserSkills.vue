@@ -1,16 +1,19 @@
 <template>
-    <div >
-        <!-- <div class="card-header" v-if="skills.length > 0"> Your Skills </div> -->
-        <ul class="list-group list-group-flush">
+    <div class="container">
+        <p v-if="skills.length === 0"> To begin, select skills from the list.
+             Rate your expertise on each skill then hit the search button.</p>
+        <h5 v-if="skills.length > 0"> Rate your expertise per skills </h5>
+        <ul class="list-group">
           <li v-for="skill in skills" :key="skill.name" class="list-group-item">
+               <button @click="removeSkill(skill.name)"  class="btn btn-outline-danger btn-sm">
+                   <i class="bi bi-dash-circle-fill"></i>&nbsp;
+               </button>
+               &nbsp;
               <span class="card-text skill">{{ skill.name}}</span> &nbsp;
               <span  v-for="i in 5" :key="i">
                   <i class="bi star" :class="{'bi-star-fill':  i <= skill.rating, 'bi-star': i > skill.rating }"
                       v-on:click="updateRating(skill.name, i)"></i>
              </span>
-               <button @click="removeSkill(skill.name)"  class="btn btn-outline-danger btn-sm">
-                   <i class="bi bi-dash-circle-fill"></i>
-               </button>
           </li>
         </ul>
     </div>
@@ -44,20 +47,13 @@ export default {
     font-size: 1.5rem;
 }
 li{
-    border-bottom: none;
     text-align: justify;
-    max-height: 5rem;
 }
-ul{
-    overflow-y: auto;
-    max-height: 50rem;
-    height: 30rem;
-}
-button{
-    margin-left: 3rem;
+.container {
+  max-height: 25rem;
+  overflow: auto;
 }
 .skill{
     display: inline-block;
-    /* width: 20rem; */
 }
 </style>

@@ -1,10 +1,13 @@
 <template>
     <div class="main">
+        <div class="banner">
+            <h1>Job Match</h1>
+        </div>
         <div class="row skillsRow">
             <div class="col-sm userSkills">
                 <UserSkills />
             </div>
-            <div class="col-sm">
+            <div class="col-3">
             </div>
             <div class="col-sm skillsCol">
                 <SkillsList />
@@ -50,8 +53,11 @@ export default {
 </script>
 <style>
 .skillsRow{
-    margin: 5rem;
-    max-height: 40rem;
+    margin: 2rem;
+    max-height: 30%;
+}
+.skillCol{
+    max-height: 200px;
 }
 .results{
     margin: 2rem;
@@ -61,7 +67,10 @@ export default {
     max-height: 40rem;
     width: 20%;
 }
-.main{
+.banner{
+    text-align: center;
+    color: whitesmoke;
+    padding: 1rem;
     background: linear-gradient(180deg,rgba(42,172,234,1) 0%,rgba(29,146,227,1) 100%);
 }
 </style>

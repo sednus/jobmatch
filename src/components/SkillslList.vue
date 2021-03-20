@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h5>Pick skills you got: </h5>
-    <div class="card">
-        <div>
-          <button v-for="skill in skills" :key="skill"
-                  @click="addSkill(skill)" class="btn btn-success btn-sm">
-              {{ skill}} <i class="bi bi-plus-circle-fill"></i>
-          </button>
-        </div>
+    <h5>Pick skills that match your experience </h5>
+    <div class="container">
+      <ul class="list-group">
+        <li class="list-group-item" v-for="skill in skills" :key="skill">
+          <button class="btn btn-outline-success btn-sm" @click="addSkill(skill)">
+            <i class="bi bi-plus-circle-fill"></i>
+            </button>
+          &nbsp;<span> {{skill}} </span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -34,13 +36,16 @@ export default {
 
 </script>
 <style scoped>
+ul{
+  max-height: 30rem;
+}
+.container {
+  max-height: 25rem;
+  overflow: auto;
+}
 .card{
   width: 25rem;
   max-height: 100rem;
-  /* background: linear-gradient(180deg,rgba(42,172,234,1) 0%,rgba(29,146,227,1) 100%); */
   border-color: black;
-}
-button{
-  margin: 0.1rem;
 }
 </style>
